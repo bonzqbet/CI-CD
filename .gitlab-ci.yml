@@ -1,0 +1,16 @@
+stages: # List of stages for jobs, and their order of execution
+  - build main
+
+build-job main:       
+  stage: build main
+  script:
+    - echo "Compiling the code..."
+    - echo "Compile complete."
+    - sudo rm -rf /home/ubuntu/*
+    - sudo cp -r * /home/ubuntu/
+    - sudo cp -r . /home/ubuntu/
+    - sudo rm -rf *
+  tags :  
+     - server1-tag
+  only :
+     - main 
