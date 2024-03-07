@@ -1,6 +1,7 @@
 version: "1"
 services:
   service-api:
+    container_name: service-api
     image: service-api
     build:
       context: .
@@ -15,6 +16,7 @@ services:
     command: nodemon -L app.js # docker container add flag "-L" to use nodemon
     
   nginx-sv:
+    container_name: nginx-sv
     image: nginx:latest
     volumes:
       - ./src/conf.d:/etc/nginx/conf.d

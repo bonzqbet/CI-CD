@@ -11,7 +11,8 @@ build-job main:
     - sudo rm -rf *
     - echo "End Upload to temp..."
     - echo "Start merge file to Production..."
-    - docker compose down
+    - docker stop service-api
+    - docker stop nginx-sv
     - sudo cp -r /home/dev /wwwroot
     - docker compose up -d
     - echo "End merge file to Production..."
