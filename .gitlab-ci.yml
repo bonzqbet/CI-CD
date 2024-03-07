@@ -4,12 +4,18 @@ stages: # List of stages for jobs, and their order of execution
 build-job main:       
   stage: build main
   script:
-    - echo "Compiling the code..."
-    - echo "Compile complete."
+    - echo "Start Upload to temp..."
     - sudo rm -rf /home/ubuntu/*
     - sudo cp -r * /home/ubuntu/
     - sudo cp -r . /home/ubuntu/
     - sudo rm -rf *
+    - echo "End Upload to temp..."
+    - echo "Start merge file to Production..."
+    - sudo cp -r /home/ubuntu/* /wwwroot/dev
+    - echo "End merge file to Production..."
+    - echo "Start delete file temp..."
+    - sudo rm -rf /home/ubuntu/*
+    - echo "End delete file temp..."
   tags :  
      - aws-server
   only :
