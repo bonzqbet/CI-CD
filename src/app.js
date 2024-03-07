@@ -10,7 +10,7 @@ app.listen(3500,function(){
 });
 
 app.all("/", function(req, res) {
-    res.json({ code: 1001, msg: `Welcome to Express Continue CD`});
+    res.json({ code: 1001, msg: `Welcome to Express Continue CD!!!!!`});
 });
 
 module.exports = app;
