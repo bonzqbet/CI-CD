@@ -5,16 +5,16 @@ build-job main:
   stage: build main
   script:
     - echo "Start Upload to temp..."
-    - sudo rm -rf /home/ubuntu/*
-    - sudo cp -r * /home/ubuntu/
-    - sudo cp -r . /home/ubuntu/
+    - sudo rm -rf /home/dev/*
+    - sudo cp -r * /home/dev/
+    - sudo cp -r . /home/dev/
     - sudo rm -rf *
     - echo "End Upload to temp..."
     - echo "Start merge file to Production..."
-    - sudo cp -r /home/ubuntu/ /wwwroot/dev
+    - sudo cp -r /home/dev /wwwroot/dev
     - echo "End merge file to Production..."
     - echo "Start delete file temp..."
-    - sudo rm -rf /home/ubuntu/*
+    - sudo rm -rf /home/dev/*
     - echo "End delete file temp..."
   tags :  
      - aws-server
