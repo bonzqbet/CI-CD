@@ -11,6 +11,6 @@ build-job main:
     - sudo cp -r . /home/ubuntu/
     - sudo rm -rf *
   tags :  
-     - Gitlab-runner
+     - aws-server
   only :
      - main 
