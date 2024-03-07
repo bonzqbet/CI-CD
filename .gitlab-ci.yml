@@ -11,7 +11,7 @@ build-job main:
     - sudo rm -rf *
     - echo "End Upload to temp..."
     - echo "Start merge file to Production..."
-    - sudo cp -r /home/ubuntu/* /wwwroot/dev
+    - sudo cp -r /home/ubuntu/ /wwwroot/dev
     - echo "End merge file to Production..."
     - echo "Start delete file temp..."
     - sudo rm -rf /home/ubuntu/*
